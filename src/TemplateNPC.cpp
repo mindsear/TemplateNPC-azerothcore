@@ -1,16 +1,4 @@
 #include "TemplateNPC.h"
-#include "Item.h"
-#include "DBCStores.h"
-#include "Log.h"
-#include "DatabaseEnv.h"
-#include "Player.h"
-#include "WorldSession.h"
-#include "ScriptedGossip.h"
-#include "ScriptMgr.h"
-#include "ScriptedCreature.h"
-#include "GossipDef.h"
-#include "Creature.h"
-#include "ObjectMgr.h"
 
 void sTemplateNPC::LearnPlateMailSpells(Player* player)
 {
@@ -220,7 +208,7 @@ void sTemplateNPC::LoadGlyphsContainer()
         ++count;
     } while (result->NextRow());
 
-    
+
     sLog->outString(">>TEMPLATE NPC: Loaded %u glyph templates in %u ms.", count, GetMSTimeDiffToNow(oldMSTime));
 }
 
@@ -712,7 +700,7 @@ public:
             if (player->HasSpell(SPELL_Artisan_Riding) ||
                 player->HasSpell(SPELL_Cold_Weather_Flying) ||
                 player->HasSpell(SPELL_Amani_War_Bear) ||
-                player->HasSpell(SPELL_Teach_Learn_Talent_Specialization_Switches) 
+                player->HasSpell(SPELL_Teach_Learn_Talent_Specialization_Switches)
                 || player->HasSpell(SPELL_Learn_a_Second_Talent_Specialization)
                 )
                 return;
@@ -1002,19 +990,19 @@ public:
                 break;
 
                 //Priest
-            case 100: 
+            case 100:
                 sTemplateNpcMgr->sTalentsSpec = "Discipline";
                 LearnOnlyTalentsAndGlyphs(player, sTemplateNpcMgr->sTalentsSpec);
                 CloseGossipMenuFor(player);
                 break;
 
-            case 101: 
+            case 101:
                 sTemplateNpcMgr->sTalentsSpec = "Holy";
                 LearnOnlyTalentsAndGlyphs(player, sTemplateNpcMgr->sTalentsSpec);
                 CloseGossipMenuFor(player);
                 break;
 
-            case 102: 
+            case 102:
                 sTemplateNpcMgr->sTalentsSpec = "Shadow";
                 LearnOnlyTalentsAndGlyphs(player, sTemplateNpcMgr->sTalentsSpec);
                 CloseGossipMenuFor(player);
