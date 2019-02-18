@@ -979,7 +979,7 @@ public:
                                 haveItemEquipped->DestroyForPlayer(player);
                             }
 
-                            haveItemEquipped->SetUInt64Value(ITEM_FIELD_CONTAINED, NULL);
+                            haveItemEquipped->SetUInt64Value(ITEM_FIELD_CONTAINED, 0);
                             haveItemEquipped->SetSlot(NULL_SLOT);
                             haveItemEquipped->SetState(ITEM_REMOVED, player);
                         }
@@ -1216,7 +1216,7 @@ public:
 
     static bool HandleReloadTemplateNPCCommand(ChatHandler* handler, const char* /*args*/)
     {
-        sLog->outString("misc", "Reloading templates for Template NPC table...");
+        sLog->outString("Reloading templates for Template NPC table...");
         sTemplateNpcMgr->LoadTalentsContainer();
         sTemplateNpcMgr->LoadGlyphsContainer();
         sTemplateNpcMgr->LoadHumanGearContainer();
