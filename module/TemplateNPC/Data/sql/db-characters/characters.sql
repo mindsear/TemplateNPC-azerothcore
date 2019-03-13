@@ -12,6 +12,9 @@ INSERT INTO `creature_template` (`entry`, `modelid1`, `name`, `subname`, `minlev
 INSERT INTO `npc_text` (`ID`, `text0_0`, `text0_1`) VALUES 
 (55002, 'Here you can select a character template which will Gear, Gem, Spec, and finish glyphs for your toon instantly.\r\n\r\nSelect your spec:', 'Here you can select a character template which will Gear, Gem, Spec, and finish glyphs for your toon instantly.\r\n\r\nSelect your spec:');
 
+INSERT INTO `command` (`name`, `security`, `help`) VALUES 
+('templatenpc reload', 3, 'Syntax: .templatenpc reload\nType .templatenpc reload to reload Template NPC database changes');
+
 Use characters;
 
 CREATE TABLE IF NOT EXISTS `template_npc_alliance` (
