@@ -1,9 +1,19 @@
-#pragma once
 #ifndef TALENT_FUNCTIONS_H
 #define TALENT_FUNCTIONS_H
 
 #include "Define.h"
 #include "Player.h"
+#include "Item.h"
+#include "DBCStores.h"
+#include "Log.h"
+#include "DatabaseEnv.h"
+#include "WorldSession.h"
+#include "ScriptedGossip.h"
+#include "ScriptMgr.h"
+#include "ScriptedCreature.h"
+#include "GossipDef.h"
+#include "Creature.h"
+#include "ObjectMgr.h"
 
 #define SPELL_Amani_War_Bear 43688
 #define SPELL_Artisan_Riding 34091
