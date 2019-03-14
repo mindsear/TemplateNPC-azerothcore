@@ -3,7 +3,7 @@
 
 void AddSC_TemplateNPC();
 
-void AddTemplateScripts()
+void AddTemplateNPCScripts()
 {
     AddSC_TemplateNPC();
 }
