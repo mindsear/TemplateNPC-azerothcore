@@ -1,3 +1,11 @@
+/* =============================================================
+TO DO:
+• Merge human sql template with alliance template
+• As Barbz suggested: Rename to character_template the module 
+    and all related files (to be less confusing and less generic)
+• As Barbz suggested: Scaling system for twink servers
+================================================================ */
+
 #include "TemplateNPC.h"
 
 void sTemplateNPC::LearnPlateMailSpells(Player* player)
