@@ -79,7 +79,7 @@ void sTemplateNPC::LearnTemplateTalents(Player* player)
         if ((*itr)->playerClass == GetClassString(player).c_str() && (*itr)->playerSpec == sTalentsSpec)
         {
             player->learnSpell((*itr)->talentId);
-            player->addTalent((*itr)->talentId, player->GetActiveSpecMask(), true);
+            player->addTalent((*itr)->talentId, player->GetActiveSpecMask(), 0);
         }
     }
 
