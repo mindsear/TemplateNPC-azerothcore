@@ -1,7 +1,7 @@
 /* =============================================================
 TO DO:
 • Merge human sql template with alliance template
-• As Barbz suggested: Rename to character_template the module 
+• As Barbz suggested: Rename to character_template the module
     and all related files (to be less confusing and less generic)
 • As Barbz suggested: Scaling system for twink servers
 ================================================================ */
@@ -673,7 +673,7 @@ void sTemplateNPC::ExtractGearTemplateToDB(Player* player, std::string& playerSp
 void sTemplateNPC::ExtractTalentTemplateToDB(Player* player, std::string& playerSpecStr)
 {
     QueryResult result = CharacterDatabase.PQuery("SELECT spell FROM character_talent WHERE guid = '%u' "
-        "AND talentGroup = '%u';", player->GetGUID(), player->GetActiveSpecMask());
+        "AND talentGroup = '%u';", (player->GetGUID()).GetCounter(), player->GetActiveSpecMask());
 
     if (!result)
     {
@@ -700,7 +700,7 @@ void sTemplateNPC::ExtractTalentTemplateToDB(Player* player, std::string& player
 void sTemplateNPC::ExtractGlyphsTemplateToDB(Player* player, std::string& playerSpecStr)
 {
     QueryResult result = CharacterDatabase.PQuery("SELECT glyph1, glyph2, glyph3, glyph4, glyph5, glyph6 "
-        "FROM character_glyphs WHERE guid = '%u' AND talentGroup = '%u';", player->GetGUID(), player->GetActiveSpec());
+        "FROM character_glyphs WHERE guid = '%u' AND talentGroup = '%u';", player->GetGUID().GetCounter(), player->GetActiveSpec());
 
     for (uint8 slot = 0; slot < MAX_GLYPH_SLOT_INDEX; ++slot)
     {
