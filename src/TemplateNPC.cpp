@@ -1469,24 +1469,23 @@ public:
     }
 };
 
+using namespace Acore::ChatCommands;
 class TemplateNPC_command : public CommandScript
 {
 public:
     TemplateNPC_command() : CommandScript("TemplateNPC_command") {}
 
-    std::vector<ChatCommand> GetCommands() const override
+    ChatCommandTable GetCommands() const override
     {
-        static std::vector<ChatCommand> TemplateNPCTable =
-            {
-                {"reload", SEC_ADMINISTRATOR, true, &HandleReloadTemplateNPCCommand, ""}};
 
-        static std::vector<ChatCommand> commandTable =
+        static ChatCommandTable commandTable =
             {
-                {"templatenpc", SEC_ADMINISTRATOR, true, nullptr, "", TemplateNPCTable}};
+                {"templatenpc reload", HandleReloadTemplateNPCCommand, SEC_ADMINISTRATOR, Console::No},
+            };
         return commandTable;
     }
 
-    static bool HandleReloadTemplateNPCCommand(ChatHandler *handler, const char * /*args*/)
+    static bool HandleReloadTemplateNPCCommand(ChatHandler *handler)
     {
         LOG_INFO("module", "Reloading templates for Template NPC table...");
         sTemplateNpcMgr->LoadTalentsContainer();
